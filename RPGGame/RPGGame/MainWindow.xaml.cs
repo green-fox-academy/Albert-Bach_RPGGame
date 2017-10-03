@@ -26,7 +26,7 @@ namespace RPGGame
             InitializeComponent();
             var foxDraw = new FoxDraw(canvas);
             Map map = new Map();
-            map.Tiles(foxDraw);
+            map.MapDrawer(foxDraw);
 
 
         }

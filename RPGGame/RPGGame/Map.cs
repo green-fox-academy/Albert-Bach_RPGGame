@@ -9,24 +9,45 @@ namespace RPGGame
 {
     class Map
     {
-        public static int gameField = 50;
-        public static string floorS = "./Assets/floor.png";
-        public static string wallS = "./Assets/wall.png";
+        private string floorS = "./Assets/floor.png";
+        private string wallS = "./Assets/wall.png";
+        private int gameField = 50;
+        int x = 0;
+        int y = 0;
 
-        public void Tiles(FoxDraw foxDraw)
+        private static List<bool[]> RockWall = new List<bool[]>
         {
-            int x = 0;
-            int y = 0;
-            for (int i = 0; i < 10; i++)
-            {
-                for (int j = 0; j < 10; j++)
-                {
-                    foxDraw.AddImage(floorS, x, y);
-                    x += gameField;
-                }
-                y += gameField;
-                x = 0;
+           new bool[]{true,true,true,false,true,false,true,true,true,true},
+           new bool[]{true,true,true,false,true,false,true,false,false,true},
+           new bool[]{true,false,false,false,true,false,true,false,false,true},
+           new bool[]{true,true,true,true,true,false,true,true,true,true},
+           new bool[]{false,false,false,false,true,false,false,false,false,true},
+           new bool[]{true,false,true,false,true,true,true,true,false,true},
+           new bool[]{true,false,true,false,true,false,false,true,false,true},
+           new bool[]{true,true,true,true,true,false,false,true,false,true},
+           new bool[]{true,false,false,false,true,true,true,true,false,true},
+           new bool[]{true,true,true,false,true,false,false,true,false,true}
+        };
 
+
+        public void MapDrawer(FoxDraw foxDraw)
+        {
+            for (int i = 0; i < RockWall.Count; i++)
+            {
+                x = 0;
+                y += gameField;
+                for (int j = 0; j < RockWall.Count; j++)
+                {
+                    x += gameField;
+                    if (RockWall[i][j] == true)
+                    {
+                        foxDraw.AddImage(floorS, x, y);
+                    }
+                    else
+                    {
+                        foxDraw.AddImage(wallS, x, y);
+                    }
+                }
             }
         }
     }
