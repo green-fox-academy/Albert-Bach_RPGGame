@@ -25,6 +25,22 @@ namespace RPGGame
         {
             InitializeComponent();
             var foxDraw = new FoxDraw(canvas);
+            Map map = new Map();
+            map.Tiles(foxDraw);
+
+
+        }
+        private void WindowKeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Left)
+            {
+                Console.WriteLine("To the left!");
+            }
+
+            if (e.Key == Key.Right)
+            {
+                Console.WriteLine("To the right!");
+            }
         }
     }
 }
