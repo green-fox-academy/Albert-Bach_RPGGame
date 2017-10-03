@@ -26,7 +26,10 @@ namespace RPGGame
             InitializeComponent();
             var foxDraw = new FoxDraw(canvas);
             Map map = new Map();
+            Hero hero = new Hero();
+
             map.MapDrawer(foxDraw);
+            hero.HeroDrawer(foxDraw);
 
 
         }

@@ -15,7 +15,7 @@ namespace RPGGame
         int x = 0;
         int y = 0;
 
-        private static List<bool[]> RockWall = new List<bool[]>
+        private List<bool[]> Field = new List<bool[]>
         {
            new bool[]{true,true,true,false,true,false,true,true,true,true},
            new bool[]{true,true,true,false,true,false,true,false,false,true},
@@ -32,14 +32,14 @@ namespace RPGGame
 
         public void MapDrawer(FoxDraw foxDraw)
         {
-            for (int i = 0; i < RockWall.Count; i++)
+            for (int i = 0; i < Field.Count; i++)
             {
                 x = 0;
                 y += gameField;
-                for (int j = 0; j < RockWall.Count; j++)
+                for (int j = 0; j < Field.Count; j++)
                 {
                     x += gameField;
-                    if (RockWall[i][j] == true)
+                    if (Field[i][j] == true)
                     {
                         foxDraw.AddImage(floorS, x, y);
                     }
