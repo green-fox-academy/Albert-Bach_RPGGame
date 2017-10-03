@@ -24,6 +24,7 @@ namespace RPGGame
         public MainWindow()
         {
             InitializeComponent();
+            var foxDraw = new FoxDraw(canvas);
         }
     }
 }
