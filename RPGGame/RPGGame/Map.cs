@@ -29,7 +29,6 @@ namespace RPGGame
            new bool[]{true,true,true,false,true,false,false,true,false,true}
         };
 
-
         public void MapDrawer(FoxDraw foxDraw)
         {
             for (int i = 0; i < Field.Count; i++)
@@ -39,7 +38,7 @@ namespace RPGGame
                 for (int j = 0; j < Field.Count; j++)
                 {
                     x += gameField;
-                    if (Field[i][j] == true)
+                    if (Field[i][j])
                     {
                         foxDraw.AddImage(floorS, x, y);
                     }

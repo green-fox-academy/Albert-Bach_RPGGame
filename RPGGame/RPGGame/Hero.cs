@@ -13,7 +13,7 @@ namespace RPGGame
         static string HeroLeft = "./Assets/hero-left.png";
         static string HeroRight = "./Assets/hero-right.png";
         static string HeroUp = "./Assets/hero-up.png";
-
+        Map map = new Map();
         int pointX = 50;
         int pointY = 50;
         int moveMent = 50;
@@ -25,7 +25,7 @@ namespace RPGGame
 
         public void WalkLeft(FoxDraw foxDraw)
         {
-            if (pointX > 50)
+            if (pointX > 50 && map.Field[(pointY - 50) / 50][(pointX - 50) / 50 - 1])
             {
                 pointX -= moveMent;
             }
@@ -34,7 +34,7 @@ namespace RPGGame
 
         public void WalkRight(FoxDraw foxDraw)
         {
-            if (pointX < 500)
+            if (pointX < 500 && map.Field[(pointY - 50) / 50][(pointX - 50) / 50 + 1])
             {
                 pointX += moveMent;
             }
@@ -43,7 +43,7 @@ namespace RPGGame
 
         public void WalkUp(FoxDraw foxDraw)
         {
-            if (pointY > 50)
+            if (pointY > 50 && map.Field[(pointY - 50) / 50 - 1][(pointX - 50) / 50])
             {
                 pointY -= moveMent;
             }
@@ -52,7 +52,7 @@ namespace RPGGame
 
         public void WalkDown(FoxDraw foxDraw)
         {
-            if (pointY < 500)
+            if (pointY < 500 && map.Field[(pointY - 50) / 50 + 1][(pointX - 50) / 50])
             {
                 pointY += moveMent;
             }
