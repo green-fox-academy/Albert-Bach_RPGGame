@@ -21,29 +21,49 @@ namespace RPGGame
     /// </summary>
     public partial class MainWindow : Window
     {
+        Hero hero;
+        Map map;
+        FoxDraw foxDraw;
+
         public MainWindow()
         {
             InitializeComponent();
-            var foxDraw = new FoxDraw(canvas);
-            Map map = new Map();
-            Hero hero = new Hero();
+            foxDraw = new FoxDraw(canvas);
+            map = new Map();
+            hero = new Hero();
 
             map.MapDrawer(foxDraw);
             hero.HeroDrawer(foxDraw);
 
-
         }
+
+
         private void WindowKeyDown(object sender, KeyEventArgs e)
         {
+            //map = new Map();
+            map.MapDrawer(foxDraw);
+
+
             if (e.Key == Key.Left)
             {
-                Console.WriteLine("To the left!");
+                hero.WalkLeft(foxDraw);
             }
 
             if (e.Key == Key.Right)
             {
-                Console.WriteLine("To the right!");
+                hero.WalkRight(foxDraw);
+            }
+
+            if (e.Key == Key.Up)
+            {
+                hero.WalkUp(foxDraw);
+            }
+
+            if (e.Key == Key.Down)
+            {
+                hero.WalkDown(foxDraw);
             }
         }
+
     }
 }
