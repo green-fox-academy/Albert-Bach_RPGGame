@@ -25,25 +25,37 @@ namespace RPGGame
 
         public void WalkLeft(FoxDraw foxDraw)
         {
-            pointX -= moveMent;
+            if (pointX > 50)
+            {
+                pointX -= moveMent;
+            }
             foxDraw.AddImage(HeroLeft, pointX, pointY);
         }
 
         public void WalkRight(FoxDraw foxDraw)
         {
-            pointX += moveMent;
+            if (pointX < 500)
+            {
+                pointX += moveMent;
+            }
             foxDraw.AddImage(HeroRight, pointX, pointY);
         }
 
         public void WalkUp(FoxDraw foxDraw)
         {
-            pointY -= moveMent;
+            if (pointY > 50)
+            {
+                pointY -= moveMent;
+            }
             foxDraw.AddImage(HeroUp, pointX, pointY);
         }
 
         public void WalkDown(FoxDraw foxDraw)
         {
-            pointY += moveMent;
+            if (pointY < 500)
+            {
+                pointY += moveMent;
+            }
             foxDraw.AddImage(HeroDown, pointX, pointY);
         }
 

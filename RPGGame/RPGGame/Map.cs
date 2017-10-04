@@ -15,7 +15,7 @@ namespace RPGGame
         int x = 0;
         int y = 0;
 
-        private List<bool[]> Field = new List<bool[]>
+        public List<bool[]> Field = new List<bool[]>
         {
            new bool[]{true,true,true,false,true,false,true,true,true,true},
            new bool[]{true,true,true,false,true,false,true,false,false,true},

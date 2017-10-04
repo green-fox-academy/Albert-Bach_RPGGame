@@ -40,7 +40,7 @@ namespace RPGGame
 
         private void WindowKeyDown(object sender, KeyEventArgs e)
         {
-            //map = new Map();
+            map = new Map();
             map.MapDrawer(foxDraw);
 
 
